@@ -1,0 +1,15 @@
+# Python environments and build artifacts
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Downloaded data and local secrets
+data/
+kaggle.json
+.kaggle/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
