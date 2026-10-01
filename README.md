@@ -1,6 +1,6 @@
 # Tweet Sentiment Classification | NLP Portfolio
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/ML-scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
 [![Pandas](https://img.shields.io/badge/Data-Pandas-150458?style=flat-square&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![Kaggle](https://img.shields.io/badge/Data%20Source-Kaggle-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/sahideseker/tweet-sentiment-classification-dataset)
@@ -80,8 +80,10 @@ tweet-sentiment-classification/
 
 ### 1. Clone and install dependencies
 
+Use Python 3.10+ for this setup and install the pinned dependencies below.
+
 ```bash
-git clone https://github.com/Panutle/tweet-sentiment-classification
+git clone https://github.com/Panutle/tweet-sentiment-classification.git
 cd tweet-sentiment-classification
 python -m venv .venv
 ```
@@ -90,7 +92,14 @@ python -m venv .venv
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+```
+
+**macOS / Linux**
+
+```bash
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 ```
 
 ### 2. Set up Kaggle API access
@@ -106,7 +115,7 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.kaggle"
 Move-Item .\kaggle.json "$env:USERPROFILE\.kaggle\kaggle.json"
 ```
 
-The repository's `.gitignore` prevents accidental commits of `kaggle.json` and downloaded data.
+Keep `kaggle.json` outside the repository. On macOS/Linux, place it at `~/.kaggle/kaggle.json` and restrict its permissions with `chmod 600 ~/.kaggle/kaggle.json`. The notebook uses the legacy JSON credential format supported by its pinned Kaggle client.
 
 ### 3. Open and run the notebook
 
@@ -131,4 +140,3 @@ The dataset is downloaded at runtime from Kaggle: [Tweet Sentiment Classificatio
 - Add text normalization for URLs, mentions, hashtags, and emojis.
 - Export the trained vectorizer and classifier for reproducible inference.
 - Include a confusion matrix and class-distribution analysis.
-#
